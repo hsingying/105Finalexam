@@ -1,0 +1,28 @@
+﻿@{
+    Layout = "~/Areas/Customer/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <meta charset="utf-8" />
+    <title>Index</title>
+    <script src="~/Scripts/kendoforIndext.js"></script>
+</head>
+<body>
+    @using (Html.BeginForm("Index", "Customer", FormMethod.Post, new { id = "SelectForm" }))
+    {
+        <div id="selectCondition">
+            <table>
+                <tr><td>客戶編號</td><td colspan="5"><input type="text" id="CustomerID" name="CustomerID" class="k-textbox"></td></tr>
+                <tr><td>客戶名稱</td><td colspan="5"><input type="text" id="CompanyName" name="CompanyName" class="k-textbox"></td></tr>
+                <tr><td>聯絡人姓名</td><td colspan="5"><input type="text" id="ContactName" name="ContactName" class="k-textbox" /></td></tr>
+                <tr><td>聯絡人職稱</td><td colspan="5"><input type="text" id="CodeVal" name="CodeVal" class="k-textbox"></td></tr>
+                <tr><td></td><td colspan="5"><button type="button" name="select" class="k-button">查詢</button><button type="reset" value="清除" class="k-button"> </button><button type="button" id="insert" class="k-button"> 新增</button></td></tr>
+            </table>
+        </div>
+        <div id="grid"></div>
+    }
+</body>
+
+</html>
